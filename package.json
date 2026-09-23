@@ -1,0 +1,12 @@
+{
+  "name": "mobile-dev-coursework",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "week1": "npm start --workspace=apps/week1",
+    "typecheck": "npm run tsc --workspaces --if-present"
+  }
+}
