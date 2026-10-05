@@ -1,30 +1,35 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, Pressable } from 'react-native';
+import { StyleSheet, Text, View, Image, Pressable, ImageSourcePropType } from 'react-native';
 
 export interface ProfileCardProps {
   name: string;
   bio: string;
   location: string;
-  avatarUrl: string;
+  avatarSource: ImageSourcePropType;
   postsCount: number;
   followersCount: number;
   followingCount: number;
   onSendMessage: () => void;
+  onGoBack: () => void;
 }
 
 export const ProfileCard: React.FC<ProfileCardProps> = ({
   name,
   bio,
   location,
-  avatarUrl,
+  avatarSource,
   postsCount,
   followersCount,
   followingCount,
   onSendMessage,
+  onGoBack,
 }) => {
   return (
     <View style={styles.card}>
-      <Image source={{ uri: avatarUrl }} style={styles.avatar} />
+      <Pressable onPress={onGoBack} style={styles.backButton}>
+        <Text style={styles.backButtonText}>←</Text>
+      </Pressable>
+      <Image source={avatarSource} style={styles.avatar} />
       <Text style={styles.name}>{name}</Text>
       <Text style={styles.bio}>{bio}</Text>
       <Text style={styles.location}>📍 {location}</Text>
@@ -69,7 +74,25 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 4 },
     shadowOpacity: 0.1,
     shadowRadius: 8,
+    shadowRadius: 8,
     elevation: 4,
+  },
+  backButton: {
+    position: 'absolute',
+    top: 16,
+    left: 16,
+    width: 36,
+    height: 36,
+    borderRadius: 18,
+    backgroundColor: '#F3F4F6',
+    alignItems: 'center',
+    justifyContent: 'center',
+    zIndex: 10,
+  },
+  backButtonText: {
+    color: '#374151',
+    fontSize: 20,
+    fontWeight: 'bold',
   },
   avatar: {
     width: 100,

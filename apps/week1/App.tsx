@@ -19,13 +19,13 @@ const studentData: StudentProfile = {
 
 // Week 2: Profile Data
 const profileData = {
-  name: 'Ayşe Yılmaz',
+  name: 'Mehmet Selim Suna',
   bio: 'Mobil uygulamalar geliştirmeyi ve yeni teknolojiler öğrenmeyi seviyorum.',
   location: 'Malatya',
-  avatarUrl: 'C:/Users/ASUS/mobile_app_dev/apps/week1/assets/original_ce428de0-eb01-4af4-bc89-81879f050e66_Screenshot_20251124_214254_WhatsApp.jpg',
-  postsCount: 120,
-  followersCount: 560,
-  followingCount: 230,
+  avatarSource: require('./assets/original_ce428de0-eb01-4af4-bc89-81879f050e66_Screenshot_20251124_214254_WhatsApp.jpg'),
+  postsCount: 42,
+  followersCount: 1337,
+  followingCount: 314,
 };
 
 export default function App() {
@@ -51,11 +51,12 @@ export default function App() {
           name={profileData.name}
           bio={profileData.bio}
           location={profileData.location}
-          avatarUrl={profileData.avatarUrl}
+          avatarSource={profileData.avatarSource}
           postsCount={profileData.postsCount}
           followersCount={profileData.followersCount}
           followingCount={profileData.followingCount}
           onSendMessage={handleSendMessage}
+          onGoBack={() => setShowProfile(false)}
         />
       ) : (
         <View style={styles.card}>
