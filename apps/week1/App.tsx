@@ -1,5 +1,6 @@
-import React from 'react';
-import { StyleSheet, Text, View, Pressable } from 'react-native';
+import React, { useState } from 'react';
+import { StyleSheet, Text, View, Pressable, Alert } from 'react-native';
+import { ProfileCard } from './components/ProfileCard';
 
 // 1. Data Structures (Separation of Data and UI)
 interface StudentProfile {
@@ -16,43 +17,78 @@ const studentData: StudentProfile = {
   interests: ['Yapay Zeka', 'Mobil Uygulama', 'Kuantum Hesaplama'],
 };
 
+// Week 2: Profile Data
+const profileData = {
+  name: 'Ayşe Yılmaz',
+  bio: 'Mobil uygulamalar geliştirmeyi ve yeni teknolojiler öğrenmeyi seviyorum.',
+  location: 'Malatya',
+  avatarUrl: 'C:/Users/ASUS/mobile_app_dev/apps/week1/assets/original_ce428de0-eb01-4af4-bc89-81879f050e66_Screenshot_20251124_214254_WhatsApp.jpg',
+  postsCount: 120,
+  followersCount: 560,
+  followingCount: 230,
+};
+
 export default function App() {
+  const [showProfile, setShowProfile] = useState(false);
+
   const handlePress = () => {
-    console.log(`[Interaction] Profil görüntülendi: ${studentData.fullName}`);
+    // Toggle the display of the new ProfileCard
+    setShowProfile(true);
+  };
+
+  const handleSendMessage = () => {
+    Alert.alert(
+      "Mesaj Gönderildi",
+      `${profileData.name}'a mesaj gönderildi!`,
+      [{ text: "Tamam" }]
+    );
   };
 
   return (
     <View style={styles.container}>
-      <View style={styles.card}>
-        {/* Profile Info Header */}
-        <Text style={styles.nameText}>{studentData.fullName}</Text>
-        <Text style={styles.deptText}>{studentData.department}</Text>
-        <Text style={styles.gradeText}>{studentData.grade}</Text>
+      {showProfile ? (
+        <ProfileCard
+          name={profileData.name}
+          bio={profileData.bio}
+          location={profileData.location}
+          avatarUrl={profileData.avatarUrl}
+          postsCount={profileData.postsCount}
+          followersCount={profileData.followersCount}
+          followingCount={profileData.followingCount}
+          onSendMessage={handleSendMessage}
+        />
+      ) : (
+        <View style={styles.card}>
+          {/* Profile Info Header */}
+          <Text style={styles.nameText}>{studentData.fullName}</Text>
+          <Text style={styles.deptText}>{studentData.department}</Text>
+          <Text style={styles.gradeText}>{studentData.grade}</Text>
 
-        {/* Section Divider / Label */}
-        <View style={styles.divider} />
-        <Text style={styles.sectionTitle}>İlgi Alanları</Text>
+          {/* Section Divider / Label */}
+          <View style={styles.divider} />
+          <Text style={styles.sectionTitle}>İlgi Alanları</Text>
 
-        {/* Dynamic List via .map() */}
-        <View style={styles.interestsContainer}>
-          {studentData.interests.map((interest, index) => (
-            <View key={`${interest}-${index}`} style={styles.interestBadge}>
-              <Text style={styles.interestText}>{interest}</Text>
-            </View>
-          ))}
+          {/* Dynamic List via .map() */}
+          <View style={styles.interestsContainer}>
+            {studentData.interests.map((interest, index) => (
+              <View key={`${interest}-${index}`} style={styles.interestBadge}>
+                <Text style={styles.interestText}>{interest}</Text>
+              </View>
+            ))}
+          </View>
+
+          {/* Action Button */}
+          <Pressable
+            style={({ pressed }) => [
+              styles.actionButton,
+              pressed && styles.actionButtonPressed,
+            ]}
+            onPress={handlePress}
+          >
+            <Text style={styles.actionButtonText}>Profili İncele</Text>
+          </Pressable>
         </View>
-
-        {/* Action Button */}
-        <Pressable
-          style={({ pressed }) => [
-            styles.actionButton,
-            pressed && styles.actionButtonPressed,
-          ]}
-          onPress={handlePress}
-        >
-          <Text style={styles.actionButtonText}>Profili İncele</Text>
-        </Pressable>
-      </View>
+      )}
     </View>
   );
 }
