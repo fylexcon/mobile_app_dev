@@ -21,8 +21,8 @@ const studentData: StudentProfile = {
 const profileData = {
   name: 'Ayşe Yılmaz',
   bio: 'Mobil uygulamalar geliştirmeyi ve yeni teknolojiler öğrenmeyi seviyorum.',
-  location: 'İstanbul',
-  avatarUrl: 'https://i.pravatar.cc/300?img=5',
+  location: 'Malatya',
+  avatarUrl: 'C:/Users/ASUS/mobile_app_dev/apps/week1/assets/original_ce428de0-eb01-4af4-bc89-81879f050e66_Screenshot_20251124_214254_WhatsApp.jpg',
   postsCount: 120,
   followersCount: 560,
   followingCount: 230,
