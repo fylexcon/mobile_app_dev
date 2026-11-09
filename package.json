@@ -7,6 +7,7 @@
   ],
   "scripts": {
     "week1": "npm start --workspace=apps/week1",
-    "typecheck": "npm run tsc --workspaces --if-present"
+    "typecheck": "npm run tsc --workspaces --if-present",
+    "kitap": "npm start --workspace=apps/kitap-listesi"
   }
 }
