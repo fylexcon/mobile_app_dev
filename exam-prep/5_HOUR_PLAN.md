@@ -1,4 +1,4 @@
-# 5-Hour Exam Plan: Mobil Cihazlar İçin Uygulama Geliştirme (Vize)
+# Exam-Day Plan (07:30–12:00): Mobil Cihazlar İçin Uygulama Geliştirme (Vize)
 
 Source: your booklet *Vize Hazırlık Kitapçığı | Hafta 1–7* (page numbers below = booklet page "s.").
 **Out of scope (skip completely):** AsyncStorage, Supabase, Auth, Camera, Location, AI, Testing, EAS Build, last year's Kotlin code.
@@ -28,21 +28,22 @@ The 3 mini mock exams in the booklet (s.153–158) all have the **same shape**. 
 
 ---
 
-## Part 2: The schedule
+## Part 2: The schedule (exam day: 07:30 → exam at 12:00)
 
 | Time | Block | Goal | Mock-exam Q |
 |---|---|---|---|
-| 0:00–0:10 | **0. Warm-up** | Know the format + the 11-step checklist | all |
-| 0:10–0:55 | **1. W1 + W2** | Code output, interface, props/state | Q1 + Q2 (40 pts) |
-| 0:55–1:00 | ☕ break | | |
-| 1:00–1:45 | **2. W3 + W4** | Flexbox, form validation, CRUD | Q3 |
-| 1:45–1:55 | ☕ break | | |
-| 1:55–2:45 | **3. W5 + W6** | FlatList, search, **navigation (your gap)** | Q4 |
-| 2:45–2:50 | ☕ break | | |
-| 2:50–3:35 | **4. W7** | fetch, try/catch/finally, useEffect | Q5 |
-| 3:35–3:45 | ☕ break | | |
-| 3:45–4:30 | **5. Timed mock** | Mini Deneme 3 on paper, then check with Bölüm 20.3 | all |
-| 4:30–5:00 | **6. Final review** | The 25 most likely questions below | all |
+| 07:30–08:15 | **1. W1 + W2** | Code output, interface, props/state | Q1 + Q2 (40 pts) |
+| 08:15–08:20 | ☕ break | | |
+| 08:20–09:00 | **2. W3 + W4** | Flexbox, form validation, CRUD | Q3 |
+| 09:00–09:10 | ☕ break + eat something | | |
+| 09:10–09:55 | **3. W5 + W6** | FlatList, search, **navigation (your gap)** | Q4 |
+| 09:55–10:00 | ☕ break | | |
+| 10:00–10:40 | **4. W7** | fetch, try/catch/finally, useEffect | Q5 |
+| 10:40–10:45 | ☕ break | | |
+| 10:45–11:15 | **6. Final review** | The 25 most likely questions (bottom of this file) | all |
+| 11:15–12:00 | **Stop studying** | Eat, travel, arrive early. Only glance at "Your personal traps" | |
+
+Block 0 (checklist) is folded into Block 1. Block 5 (full timed mock) is dropped: its questions are already the self-tests inside each block.
 
 **Every block works the same way:**
 1. Read the "5 Dakikada Hafta X" page for that week (Bölüm 18, s.159–165): 5 min.
